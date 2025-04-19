@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 3rem;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 0 8px 32px 0 rgba(185, 185, 189, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.logo {
+  color: rgb(196, 83, 42);
+  text-decoration: none;
+  letter-spacing: 0.5rem;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 2rem;
+}
+.nav-links li {
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(196, 83, 42);
+}
