@@ -3,6 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "./Loading";
 const URL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 import "./cocktail.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const SingleCocktail = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -81,7 +84,7 @@ const SingleCocktail = () => {
       </Link>
       <h2 className="section-title">{name}</h2>
       <div className="drink">
-        <img src={image} alt={name} />
+        <LazyLoadImage src={image} alt={name} effect="blur" />
         <div className="drink-info">
           <p>
             <span className="drink-data">name :</span>

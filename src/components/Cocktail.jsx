@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "./cocktail.css";
 
 const Cocktail = ({ id, name, image, info, glass }) => {
@@ -14,11 +16,15 @@ const Cocktail = ({ id, name, image, info, glass }) => {
     <Card>
       <CardActionArea>
         <CardMedia
-          component="img"
-          height="400"
-          image={image}
-          alt={name}
-          className="img"
+          component={() => (
+            <LazyLoadImage
+              src={image}
+              alt={name}
+              effect="blur"
+              style={{ objectFit: "cover" }}
+              className="img"
+            />
+          )}
         />
 
         <CardContent>
